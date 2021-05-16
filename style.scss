@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+@media (min-width: 1200px) {
+    .container {
+    max-width: 1170px;
+    }
+}
+
+.container {
+    .nav-bar {
+        height: 5rem;
+        margin: 0;
+
+        .logo-section {
+            height: 100%;
+            display: grid;
+            place-items: center;
+
+            .logo {
+                width: 5vw;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .links-menu {
+            height: 100%;
+
+            a {
+                border-right: 1px solid blue;
+                font-size: 1rem;
+                padding: 0.2rem;
+                text-decoration: none;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+                transition: .3s ease;
+                &:hover {
+                    background-color: rgb(158, 192, 255);
+                    border-radius: 0.3rem;
+                    color: white;
+                }
+            }
+
+            @media screen and (max-width: 989px) {
+                a {
+                    font-size: 1.7vw;
+                    border: none;
+                }
+            }
+
+            .login {
+                display: grid;
+                place-items: center;
+                height: 100%;
+                background-color: rgb(158, 192, 255);
+                
+                a {
+                    border: none;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    #carouselExampleIndicators {
+        margin-top: 5rem;
+    }
+
+    .cards-section {
+        width: 100%;
+        height: 35rem;
+
+        h2 {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media screen and (max-width: 989px) {
+            h2 {
+                padding-bottom: 0;
+                font-size: 2.5vw;
+            }
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+
+            .car-details {
+                width: 22vw;
+                height: 27rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .top {
+                    height: 50%;
+                    width: 100%;
+        
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 0 3rem 0 3rem;
+                    }
+                }
+
+                .specs {
+                    height: 40%;
+                    width: 100%;
+                    padding: 0 2rem;
+                    margin-bottom: 1.5rem;
+
+                    span {
+                        color: tomato;
+                        font-style: italic;
+                    }
+
+                    h5 {
+                        font-size: medium;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1150px) {
+                .car-details {
+                width: 25vw;
+                }
+            }
+
+            @media screen and (max-width: 989px) {
+                .car-details {
+                width: 22vw;
+
+                    .top {
+                        height: 35%;
+
+                        img {
+                            height: 80%;
+                        }
+                    } 
+
+                    .specs {
+                        h4 {
+                            font-size: 2vw;
+                        }
+
+                        ul li {
+                            font-size: 1.5vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(114, 156, 233);
+    margin: 0 !important;
+
+    .footer-links {
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            padding: 0.5rem;
+            transition: .3s ease-in-out;
+            &:hover {
+                color: black;
+                background-color: rgb(180, 180, 180);
+                border-radius: 0.3rem;
+            }
+        }
+
+        @media screen and (max-width: 989px) {
+            a {
+                font-size: 1.5vw;
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            margin: 0 0 0.5rem 0 !important;
+        }
+
+        .social-media {
+            i {
+                font-size: 2.5vw;
+                margin: 0 0.5rem;
+                transition: .3s ease;
+                &:hover {
+                    cursor: pointer;
+                    color: rgb(219, 219, 219);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav-bar {
+
+        .logo-section {
+            img {
+                width: 9vw !important;
+            }
+        }
+
+        .mobile-menu {
+            position: absolute;
+            right: 1rem;
+            top: 0.7rem;
+            padding: 0.5rem;
+            border: 1px solid rgba(128, 128, 128, 0.445);
+            border-radius: 0.5rem;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                cursor: pointer;
+            }
+           
+            #mobile-nav {
+                font-size: 2rem;
+                color: grey;
+            }
+        }
+
+        .menu-section {
+            transform: translateX(100%);
+        }
+
+        .toggle-menu {
+            transform: translateX(-15%);
+        }
+
+        .toggle-logo {
+            opacity: 0;
+        }
+    }
+
+    .cards-section {
+        height: fit-content !important;
+
+        h2 {
+            font-size: 5vw !important;
+        }
+
+        .cards {
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            .car-details {
+                width: 80vw !important;
+                height: 90vh !important;
+                justify-content: space-around;
+
+                .top {
+                    flex: 0.5;
+                    img {
+                        height: 100% !important;
+                    }
+                }
+
+                .specs {
+                    flex: 0.5;
+                    margin-bottom: 0 !important;
+                    h4 {
+                        font-size: 7vw !important;
+                    }
+
+                    h5 {
+                        font-size: 5vw !important;
+                    }
+
+                    ul li {
+                        font-size: 1.2rem !important;
+                    }
+                }
+            }
+        } 
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+
+        .footer-links {
+            width: 100%;
+            max-width: none;
+            a {
+                font-size: 2vw;
+            }
+        }
+
+        .social {
+            padding-bottom: 1rem;
+            width: 100%;
+            max-width: none;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .social-media {
+                i {
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav-bar {
+        .mobile-menu {
+            top: 1.5rem;
+
+            #mobile-nav {
+                font-size: 1rem;
+            }
+        }
+
+        .links-menu {
+            display: grid !important;
+            grid-template-rows: .5fr;
+            grid-template-columns: .3fr .3fr .3fr;
+            grid-template-areas: "item1 item2 item3"
+                                 "item4 item4 item5"
+        }
+
+        .item1 {
+            grid-area: item1;
+            font-size: 3vw !important;
+            justify-self: center;
+            width: fit-content;
+            max-width: none;
+        }
+
+        .item2 {
+            grid-area: item2;
+            font-size: 3vw !important;
+            max-width: none;
+        }
+
+        .item3 {
+            grid-area: item3;
+            font-size: 3vw !important;
+            max-width: none;
+        }
+
+        .item4 {
+            grid-area: item4;
+            font-size: 3vw !important;
+            max-width: none;
+        }
+
+        .item5 {
+            grid-area: item5;
+            max-width: none;
+            height: 80% !important;
+            width: 80%;
+            border-radius: 0.3rem;
+            a {
+                font-size: 3vw !important;
+            }
+        }
+    }
+
+    .car-details {
+        margin-top: 0 !important;
+        height: 50vh !important;
+
+        .top {
+            flex: 0.5 !important;
+            img {
+                height: unset !important;
+                width: 100% !important;
+            }
+        }
+
+        .specs {
+            flex: 0.4 !important;
+            margin-top: 1rem !important;
+
+            ul li {
+                font-size: 2vw !important;
+            }
+        }
+    }
+}
